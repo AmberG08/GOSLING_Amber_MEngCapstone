@@ -144,6 +144,11 @@ Rsq_test = lasso_best.score(X_test, y_test)
 print('\nTrain R squared ', round(Rsq_train,5))
 print('Test R squared', round(Rsq_test,5))
 
+mse_train=mean_squared_error(y_train, lasso_best.predict(X_train))
+mse_test=mean_squared_error(y_test, lasso_best.predict(X_test))
+print('Train MSE ', round(mse_train,5))
+print('Test MSE ', round(mse_test,5))
+
 plt.semilogx(model.alphas_, model.mse_path_, ":")
 plt.plot(
     model.alphas_ ,
